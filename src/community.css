@@ -1,0 +1,85 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+      margin-bottom: 0px;
+      background: url(pictures/JG.png);
+      background-color: #252320;
+      font-family: Comic Sans MS, cursive, sans-serif;
+}
+table{
+  position: relative;
+    border:0px solid #0ff;
+    margin:5px auto 0;
+    overflow: hidden;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+.searchBox{
+      width: 40%;
+      height: 25px;
+      border: 0px;
+      outline: hidden;
+      border-radius: 2px;
+      margin: 0 auto;
+      position: relative;
+}
+.inputBox{
+      border: none;
+      width: 88%;
+      height: 25px;
+      line-height: 30px;
+      outline: none;
+      padding-left: 10px;
+      caret-color:#008B8B;
+      font-size: 14px;
+}
+
+.searchBtn{
+      width: 50px;
+      height: 25px;
+      border: none;
+      position: absolute;
+      right: -55px;
+      outline: none;
+      color: white;
+      font-size: 13px;
+      background-color: cornflowerblue;
+}
+
+.searchBtn:hover{
+      background-color: #497fdf;
+}
+
+b{
+    font-size: 20px;
+}
+
+p2{
+      font-size: 35px;
+      margin-right: 5px;
+      font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+p3{
+      font-size: 50px;
+      margin-right: 5px;
+      font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+p1{
+      font-size: 20px;
+      margin-right: 5px;
+      font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+#T1{
+      display: block
+}
+
+#T2{
+      display: none
+}
+
+#submit{
+      display: none
+}

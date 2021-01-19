@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="game.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id = "container" >
+    <div id = "left">
+        <video id="video1" width="1080" controls>
+            <source src="sample.mp4" type="video/mp4">
+            </video>
+        <button class = "button" onclick="playPause()">Play/Pause</button> 
+        
+  <button class = "button" onclick="makeBig()">Big</button>
+  <button class = "button" onclick="makeNormal()">Normal</button>
+  <button class = "button" onclick="makeSmall()">Small</button>
+  <button onclick="setHalfVolume()" class="button">Set volume to 50%</button>
+  <button onclick="setFullVolume()" class="button">Set volume to 100%</button>
+    </div>
+
+    <div id = "right">
+        <p>Friendlist</p>
+        <p>Format:Name+hobby+school+status</p>
+        <p>Search by hobby: <input type="text" id="hobbyToCheck" value = ""></p>
+        <button class = "button" onclick="searchHobby()">Search</button>
+            <p><span id="hobby0"></span></p>
+            <p><span id="hobby1"></span></p>
+            <p><span id="hobby2"></span></p>
+        <p>Search by school: <input type="text" id="schoolToCheck" value = ""></p>
+        <button class = "button" onclick="searchSchool()">Search</button>
+            <p><span id="school0"></span></p>
+            <p><span id="school1"></span></p>
+            <p><span id="school2"></span></p>
+        <button class ="button" onclick="viewAll()">View all friends</button>
+            <p><span id = "all0"></span></p>
+            <p><span id = "all1"></span></p>
+            <p><span id = "all2"></span></p>
+            <p><span id = "all3"></span></p>
+            <p><span id = "all4"></span></p>
+            <p><span id = "all5"></span></p>
+
+<button class = "button" onclick="viewOnline()">View online friends</button>
+<p><span id = "online0"></span></p>
+<p><span id = "online1"></span></p>
+<p><span id = "online2"></span></p>
+<p>invite your friend to room ID:<span id="RID_show"></span></p>
+<div id = "invitedname">
+    <p>People in this room:</p>
+        <span id = "invitelist"></span>
+</div>
+<a href="index.html"><button class ="button">Return</button></a>
+<script language="JavaScript">
+    function processForm()
+    {
+      var parameters = location.search.substring(1).split("&");
+      var temp = parameters[0].split("=");
+      l = unescape(temp[1]);
+      document.getElementById("RID_show").innerHTML = l; 
+    }
+    processForm();
+  </script>
+</div>
+
+
+</div>
+
+    
+<script>
+    var friendlist = [[name = "Cierra", hobby = "MMO", school = "McMaster", status = "online"],
+                [name = "Alden", hobby = "FPS", school = "UoT", status = "online"],
+                [name = "Kierra", hobby = "MMO",school = "McMaster",  status = "online"],
+                [name = "Pierre", hobby = "FPS", school = "UoW", status = "offline"],
+                [name = "Thomas", hobby = "MMO", school = "UoT", status = "offline"],
+                [name = "Miranda", hobby = "FPS", school = "McMaster",status = "offline"]             
+
+            ];
+    
+    function checkhobby(friend) {
+        return friend[1] == document.getElementById("hobbyToCheck").value;
+    }
+
+    function checkschool(friend){
+        return friend[2] == document.getElementById("schoolToCheck").value;
+    }
+
+    
+    function viewAll(){
+        document.getElementById("all0").innerHTML = "<button class='button1' onclick='invite(friendlist[0][0])'><p>+</p></button>"+friendlist[0];
+        document.getElementById("all1").innerHTML = "<button class='button1' onclick='invite(friendlist[1][0])'><p>+</p></button>"+friendlist[1];
+        document.getElementById("all2").innerHTML = "<button class='button1' onclick='invite(friendlist[2][0])'><p>+</p></button>"+friendlist[2];
+        document.getElementById("all3").innerHTML = "<button class='button1' onclick='invite(friendlist[3][0])'><p>+</p></button>"+friendlist[3];
+        document.getElementById("all4").innerHTML = "<button class='button1' onclick='invite(friendlist[4][0])'><p>+</p></button>"+friendlist[4];
+        document.getElementById("all5").innerHTML = "<button class='button1' onclick='invite(friendlist[5][0])'><p>+</p></button>"+friendlist[5];
+    }
+
+    function searchonline(friend){
+        return friend[3] == "online";
+    }
+
+    function viewOnline(){
+        var T = friendlist.filter(searchonline);
+        nameone= T[0][0];
+        nametwo = T[1][0];
+        namethree = T[2][0];
+        document.getElementById("online0").innerHTML = "<button class='button1' onclick='invite(nameone)'><p>+</p></button>"+T[0];
+        document.getElementById("online1").innerHTML = "<button class='button1' onclick='invite(nametwo)'><p>+</p></button>"+T[1];
+        document.getElementById("online2").innerHTML = "<button class='button1' onclick='invite(namethree)'><p>+</p></button>"+T[2];
+    }
+    function searchHobby() {
+        var T = friendlist.filter(checkhobby);
+        nameone= T[0][0];
+        nametwo = T[1][0];
+        namethree = T[2][0];
+        document.getElementById("online0").innerHTML = "<button class='button1' onclick='invite(nameone)'><p>+</p></button>"+T[0];
+        document.getElementById("online1").innerHTML = "<button class='button1' onclick='invite(nametwo)'><p>+</p></button>"+T[1];
+        document.getElementById("online2").innerHTML = "<button class='button1' onclick='invite(namethree)'><p>+</p></button>"+T[2];
+    }
+
+    function searchSchool(){
+        var T = friendlist.filter(checkschool);
+        nameone = T[0][0];
+        document.getElementById("school0").innerHTML = "<button class='button1' onclick='invite(nameone)'><p>+</p></button>"+T[0];
+        if (T[1]){
+            nametwo = T[1][0];
+            document.getElementById("school1").innerHTML = "<button class='button1' onclick='invite(nametwo)'><p>+</p></button>"+T[1];
+        }
+        if (T[2]){
+            namethree = T[2][0];
+        document.getElementById("school2").innerHTML = "<button class='button1' onclick='invite(namethree)'><p>+</p></button>"+T[2];
+        }
+    }
+
+    var invited = [];
+
+    function invite(name){
+        if( !invited.includes(name) ){
+        invited += name + ",";
+    }
+        document.getElementById("invitelist").innerHTML = invited;
+        
+    }
+
+    var myVideo = document.getElementById("video1"); 
+
+    function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
+
+    function makeBig() { 
+    myVideo.width = 1200; 
+} 
+
+    function makeSmall() { 
+    myVideo.width = 1000; 
+} 
+
+    function makeNormal() { 
+    myVideo.width = 1080; 
+} 
+
+    function setHalfVolume() { 
+    myVideo.volume = 0.5;
+} 
+
+    function setFullVolume() { 
+    myVideo.volume = 1.0;
+} 
+    </script>
+</body>
+
+</html>

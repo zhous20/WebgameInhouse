@@ -1,0 +1,13 @@
+Shengchen Zhou: - main page (index.html, style.css)
+		- start game page and functions (create game room, enter game room)
+		- game page content(game.html, game.css)
+		- friend list functions (search friends, view online, invite friends)
+		- setting page (adjust colour theme, font size/style)
+		- team lead and responsible for final check of all documentation works.
+
+Yanting Cao:  	- community page content(community.html, community.css)
+		- game discussion/forum functions (create post, reply post, delete post)
+		- contact us page
+		- report issue page
+
+

@@ -1,0 +1,148 @@
+body {
+    background-color:#ffffff;
+    font-family: Lucida Console, Courier, monospace;
+    color: rgb(31, 31, 31);
+    font-size:20px;
+}
+.header{
+    margin-left: 200px;
+    text-align: center;
+
+}
+.nav{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.nav a{
+    display: block;
+    height: 16px;
+    width: 200px;
+    color: #ffffff;
+    background-color: #555555;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px 32px;
+    z-index:9999;
+}
+.nav a:hover{
+    background-color: gold;
+}
+.nav ul{
+    list-style: none;
+    padding: 0;
+}
+.drop-down > ul >li {
+    float: left;
+    position: relative;
+    z-index:9999;
+}
+.drop-down > ul >li:hover > ul{
+    display: block;
+}
+.drop-down > ul >li > ul {
+    position: absolute;
+    display: none;
+}
+.drop-down > ul > li > ul > li:hover > ul{
+    display: block;
+}
+.drop-down > ul > li > ul > li{
+    position: relative;
+}
+.clearfix{
+    *zoom: 1;
+}
+.clearfix ::after{
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+}
+
+table{
+    position: relative;
+      border:0px solid #0ff;
+      margin:5px auto 0;
+      overflow: hidden;
+  }
+  
+
+
+#RI{
+    display: none
+}
+
+#ST{
+    display: none
+}
+
+#ST_join{
+    display: none
+}
+
+#CU{
+    display: none
+}
+
+#Settings{
+    display: none
+}
+
+
+.button {
+    background-color:  #555555; 
+    border: none;
+    color: white;
+    width: 300px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "Lucida Console", Courier, monospace;
+  }
+
+
+  #customize {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+
+  #customize1 {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #customize td, #customers th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    
+  }
+  
+  #customize tr:hover {background-color: rgb(255, 255, 255);}
+  
+  #customize th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  #customize1 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
